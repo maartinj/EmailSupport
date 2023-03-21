@@ -8,6 +8,19 @@
 
 import Foundation
 extension Bundle {
+    
+    var displayName: String {
+        object(forInfoDictionaryKey: "CFBundleName") as? String ?? "Could not determine the application name"
+    }
+    
+    var appBuild: String {
+        object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "Could not determine the application build number"
+    }
+    
+    var appVersion: String {
+        object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Could not determine the application versiom"
+    }
+    
     func decode<T: Decodable>(_ type: T.Type,
                               from file: String,
                               dateDecodingStategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,

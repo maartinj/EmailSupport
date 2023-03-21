@@ -15,6 +15,9 @@
 		BB7834D2278368A900187C90 /* ExampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7834D1278368A900187C90 /* ExampleData.swift */; };
 		BBA0C2082783CBE800A8187E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA0C2072783CBE800A8187E /* Launch Screen.storyboard */; };
 		BBA0C20A2783CC1F00A8187E /* Team_SportsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0C2092783CC1F00A8187E /* Team_SportsApp.swift */; };
+		E426485729C918EF00B6DD73 /* DeviceModels.json in Resources */ = {isa = PBXBuildFile; fileRef = E426485629C918EF00B6DD73 /* DeviceModels.json */; };
+		E426485929C91FA200B6DD73 /* SupportEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E426485829C91FA200B6DD73 /* SupportEmail.swift */; };
+		E426485C29C928C000B6DD73 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E426485B29C928C000B6DD73 /* MailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		BB7834D1278368A900187C90 /* ExampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleData.swift; sourceTree = "<group>"; };
 		BBA0C2072783CBE800A8187E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BBA0C2092783CC1F00A8187E /* Team_SportsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_SportsApp.swift; sourceTree = "<group>"; };
+		E426485629C918EF00B6DD73 /* DeviceModels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DeviceModels.json; sourceTree = "<group>"; };
+		E426485829C91FA200B6DD73 /* SupportEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportEmail.swift; sourceTree = "<group>"; };
+		E426485B29C928C000B6DD73 /* MailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				BBA0C2092783CC1F00A8187E /* Team_SportsApp.swift */,
+				E426485629C918EF00B6DD73 /* DeviceModels.json */,
+				E426485A29C9289400B6DD73 /* UIViewControllerRepresentable */,
 				BB7834D4278368BE00187C90 /* Views */,
 				BB7834D3278368B200187C90 /* Models */,
 				BB028A5327836B0E00D9785B /* Extensions */,
@@ -91,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7834D1278368A900187C90 /* ExampleData.swift */,
+				E426485829C91FA200B6DD73 /* SupportEmail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +110,14 @@
 				BB7834C32783682D00187C90 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E426485A29C9289400B6DD73 /* UIViewControllerRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				E426485B29C928C000B6DD73 /* MailView.swift */,
+			);
+			path = UIViewControllerRepresentable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBA0C2082783CBE800A8187E /* Launch Screen.storyboard in Resources */,
+				E426485729C918EF00B6DD73 /* DeviceModels.json in Resources */,
 				BB7834C92783682F00187C90 /* Preview Assets.xcassets in Resources */,
 				BB7834C62783682F00187C90 /* Assets.xcassets in Resources */,
 			);
@@ -174,10 +192,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E426485929C91FA200B6DD73 /* SupportEmail.swift in Sources */,
 				BB7834C42783682D00187C90 /* ContentView.swift in Sources */,
 				BB028A5927836C3A00D9785B /* Bundle+Extension.swift in Sources */,
 				BBA0C20A2783CC1F00A8187E /* Team_SportsApp.swift in Sources */,
 				BB7834D2278368A900187C90 /* ExampleData.swift in Sources */,
+				E426485C29C928C000B6DD73 /* MailView.swift in Sources */,
 				BB028A5727836C2E00D9785B /* UIDevice+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

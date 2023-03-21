@@ -5,9 +5,17 @@
 //  Created by Stewart Lynch on 2022-01-03.
 //
 
+// Film: https://www.youtube.com/watch?v=uLqoDjGav7Q&ab_channel=StewartLynch
+
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.openURL) var openURL
+    @State private var askForAttachment = false
+    @State private var showEmail = false
+    @State private var email = SupportEmail(toAddress: "slynch@createtechsol.com",
+                                     subject: "Support Email",
+                                     messageHeader: "Please describe your issue below")
     var body: some View {
         NavigationView {
             List(ExampleData.examples) { example in
@@ -21,7 +29,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        
+                        askForAttachment.toggle()
                     } label: {
                         HStack {
                             Text("Email Support")
@@ -30,6 +38,41 @@ struct ContentView: View {
                         }
                     }
                 }
+            }
+            .sheet(isPresented: $showEmail) {
+                MailView(supportEmail: $email) { result in
+                    switch result {
+                    case .success:
+                        print("Email sent")
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+            .confirmationDialog("", isPresented: $askForAttachment) {
+                Button("Yes") {
+                    email.data = ExampleData.data
+                    if email.data == nil {
+                        email.send(openURL: openURL)
+                    } else {
+                        if MailView.canSendMail {
+                            showEmail.toggle()
+                        } else {
+                            print("""
+                            This device does not supprot email
+                            \(email.body)
+                            """)
+                        }
+                    }
+                }
+                Button("No") {
+                    email.send(openURL: openURL)
+                }
+            } message: {
+                Text("""
+                SUPPORT EMAIL
+                Include data as an attachment?
+                """)
             }
         }
     }

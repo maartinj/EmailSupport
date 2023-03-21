@@ -24,4 +24,8 @@ struct ExampleData: Encodable, Identifiable {
             ExampleData(name: "Pool", image: "🎱")
         ]
     }
+    
+    static var data: Data? {
+        try? JSONEncoder().encode(examples)
+    }
 }
